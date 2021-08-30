@@ -10,6 +10,8 @@ services:
         container_name: iq_devs_payments_fpm
         restart: unless-stopped
         tty: true
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
         env_file:
             - ../.env
         working_dir: /var/www
